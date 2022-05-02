@@ -12,8 +12,10 @@ using namespace std;
 
 class TokensImmutableGroup {
     // Класс для группы токенов, состав которой постоянен
-
+protected:
     void fillTokens();
+
+    string getToken(int code);
 
 public:
     // Разделитель между префиксом и кодом
@@ -22,13 +24,13 @@ public:
     string prefix;
     // Значения, которые кодируем
     vector<string> values;
-    // Коды значений
-    vector<string> codes;
     // Словарь токенов
     // token = prefix + prefixDelimiter + Код
     map<string, string> tokens;
 
     TokensImmutableGroup(string prefix_, vector<string> values_);
+
+    TokensImmutableGroup(string prefix_);
 
     string getValueToken(const string &value);
 };
