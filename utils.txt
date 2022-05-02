@@ -1,0 +1,2 @@
+https://docs.microsoft.com/ru-ru/cpp/cpp/keywords-cpp?view=msvc-170
+https://www.cyberforum.ru/cpp-beginners/thread869266.html
