@@ -7,6 +7,9 @@ using namespace std;
 #define COURSEWORK_CONSTS_H
 
 // Список всех ключевых слов.
-extern vector<string> keyWords;
+extern const vector<string> keyWords;
+
+// Список всех разделителей
+extern const vector<string> spacers;
 
 #endif //COURSEWORK_CONSTS_H
