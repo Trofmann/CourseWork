@@ -7,11 +7,6 @@ TokensMutableGroup::TokensMutableGroup(string prefix_) : TokensImmutableGroup(st
 TokensMutableGroup::TokensMutableGroup(string prefix_, vector<string> values_) : TokensImmutableGroup(
         std::move(prefix_), std::move(values_)) {}
 
-bool TokensMutableGroup::isContains(const string &value) {
-    // Проверка вхождения значения в группу
-    return find(this->values.begin(), this->values.end(), value) != this->values.end();
-}
-
 string TokensMutableGroup::getValueToken(const string &value) {
     // Токен по значению
     if (this->isContains(value)) {

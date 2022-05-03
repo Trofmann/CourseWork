@@ -28,4 +28,9 @@ string TokensImmutableGroup::getValueToken(const string &value) {
     return this->tokens[value];
 }
 
+bool TokensImmutableGroup::isContains(const string &value) {
+    // Проверка вхождения значения в группу
+    return find(this->values.begin(), this->values.end(), value) != this->values.end();
+}
+
 string TokensImmutableGroup::prefixDelimiter = "_";

@@ -11,8 +11,6 @@
 
 class TokensMutableGroup : public TokensImmutableGroup {
     // Класс для группы токенов, состав которой непостоянен
-private:
-    bool isContains(const string& value_);
 public:
     TokensMutableGroup(string prefix_);
 

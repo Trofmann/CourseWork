@@ -33,6 +33,8 @@ public:
     TokensImmutableGroup(string prefix_);
 
     string getValueToken(const string &value);
+
+    bool isContains(const string& value_);
 };
 
 
