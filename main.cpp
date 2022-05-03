@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "classes/TokensImmutableGroup.h"
 #include "classes/TokensMutableGroup.h"
 #include "consts/consts.h"
@@ -8,12 +9,17 @@
 
 using namespace std;
 
-// TODO: Группы токенов объявлять в глобальной области видимости, чтобы можно было получить доступ из функций
-
-
 int main() {
     system("chcp 65001");
     prepare();
-    test();
+    // test();
+    // Спарсенные данные из входного файла
+    vector <string> parsedData;
+    // Входной файл
+    ifstream fileIn("easy_example.cpp");
+    char ch;
+    while (fileIn.get(ch)) {
+        cout << 1;
+    }
     return 0;
 }

@@ -1,2 +1,5 @@
 https://docs.microsoft.com/ru-ru/cpp/cpp/keywords-cpp?view=msvc-170 - список ключевых слов
 https://www.cyberforum.ru/cpp-beginners/thread869266.html - классы в отдельном файле
+https://www.cyberforum.ru/cpp-beginners/thread2120881.html - из файла в вектор
+
+Файл, с которого читаем, должен лежать в одной папке с .exe
