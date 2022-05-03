@@ -7,7 +7,7 @@ void testTokensImmutableGroup() {
     // Тестирование неизменяемой группы токенов
     // Ожидается: kw_0 kw_1
     // Проверено
-    TokensImmutableGroup kws("kw", keyWords);
+    TokensImmutableGroup kws(keyWordsGroupPrefix, keyWords);
     cout << kws.getValueToken("alignas") << ' ';
     cout << kws.getValueToken("alignof");
     cout << endl;
@@ -15,14 +15,14 @@ void testTokensImmutableGroup() {
 
 void testTokensMutableGroup() {
     // Тестирование изменяемой группы токенов
-    // Ожидается: str_c_0 str_c_1 str_c_1
+    // Ожидается: sc_0 sc_1 sc_1
     // Проверено
-    vector<string> str;
-    str.push_back("abc");
-    TokensMutableGroup strgr("str_c", str);
-    cout << strgr.getValueToken("abc") << ' ';
-    cout << strgr.getValueToken("erf") << ' ';
-    cout << strgr.getValueToken("erf");
+    vector<string> stringConsts;
+    stringConsts.push_back("abc");
+    TokensMutableGroup stringConstsGroup(stringConstsGroupPrefix, stringConsts);
+    cout << stringConstsGroup.getValueToken("abc") << ' ';
+    cout << stringConstsGroup.getValueToken("erf") << ' ';
+    cout << stringConstsGroup.getValueToken("erf");
     cout << endl;
 }
 

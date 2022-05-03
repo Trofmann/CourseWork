@@ -22,9 +22,34 @@ const vector<string> spacers = {
         " ", "\n", "(", ")", "{", "}", "[", "]", "\"", "'", ":", ";", "_", ",", "\t"
 };
 
-// Список знаков
-const vector<string> signs = {
+// Список арифметических знаков
+const vector<string> arithmeticSigns = {
         "+", "-", "<", ">", "=", "!", "&", "|"
 };
 
+// Список знаков, которые могут использоваться в числовых константах
 vector<string> digits;
+
+// Префиксы групп. Правило: длина префикса равна 2
+
+string prefixDelimiter_ = "_";
+//Ключевые слова -> key words -> kw
+string keyWordsGroupPrefix = "kw";
+
+// Разделители -> spacers -> sp
+string spacersGroupPrefix = "sp";
+
+// Арифметические знаки -> arithmetic signs -> sg
+string arithmeticSignsGroupPrefix = "sg";
+
+// Переменные -> variables -> vr
+string variablesGroupPrefix = "vr";
+
+// Числовые константы -> digit consts -> dc
+string digitConstsGroupPrefix = "dc";
+
+// Строковые константы -> string consts -> sc
+string stringConstsGroupPrefix = "sc";
+
+// Пользовательские типы данных -> user data types -> ut
+string userTypesGroupPrefix = "ut";

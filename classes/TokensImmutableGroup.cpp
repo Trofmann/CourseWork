@@ -1,3 +1,4 @@
+#include "../consts/consts.h"
 #include "TokensImmutableGroup.h"
 
 TokensImmutableGroup::TokensImmutableGroup(string prefix_, vector<string> values_) {
@@ -28,4 +29,4 @@ string TokensImmutableGroup::getValueToken(const string &value) {
     return this->tokens[value];
 }
 
-string TokensImmutableGroup::prefixDelimiter = "_";
+string TokensImmutableGroup::prefixDelimiter = prefixDelimiter_;
