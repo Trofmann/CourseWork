@@ -1,5 +1,5 @@
 #include "utils.h"
-#include "consts.h"
+#include "../consts/consts.h"
 
 // Подготовка к выполнению программы
 void prepare() {
