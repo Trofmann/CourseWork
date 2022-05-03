@@ -19,8 +19,6 @@ extern const vector<string> arithmeticSigns;
 extern vector<string> digits;
 
 // Префиксы групп
-
-extern string prefixDelimiter_;
 // Ключевые слова
 extern string keyWordsGroupPrefix;
 

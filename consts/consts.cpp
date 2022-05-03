@@ -31,8 +31,6 @@ const vector<string> arithmeticSigns = {
 vector<string> digits;
 
 // Префиксы групп. Правило: длина префикса равна 2
-
-string prefixDelimiter_ = "_";
 //Ключевые слова -> key words -> kw
 string keyWordsGroupPrefix = "kw";
 
