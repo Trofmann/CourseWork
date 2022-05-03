@@ -4,6 +4,7 @@
 #include "TokensImmutableGroup.h"
 #include "TokensMutableGroup.h"
 #include "consts.h"
+#include "utils.h"
 
 using namespace std;
 
@@ -28,8 +29,15 @@ void testTokensMutableGroup() {
     cout << strgr.getValueToken("erf");
 }
 
+void testDigitsPreparation() {
+    // Тестирование заполнения знаков для числовых констант
+    // Ожидается: 0 5 9 .
+    cout << digits[0] << ' ' << digits[5] << ' ' << digits[9] << ' ' << digits[10];
+}
+
 int main() {
     system("chcp 65001");
-    testTokensMutableGroup();
+    prepare();
+    testDigitsPreparation();
     return 0;
 }

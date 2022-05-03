@@ -15,4 +15,7 @@ extern const vector<string> spacers;
 // Список всех знаков
 extern const vector<string> signs;
 
+// Список знаков, которые могут использоваться в числовых константах
+extern vector<string> digits;
+
 #endif //COURSEWORK_CONSTS_H

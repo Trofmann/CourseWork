@@ -27,3 +27,5 @@ const vector<string> spacers = {
 const vector<string> signs = {
         "+", "-", "<", ">", "=", "!", "&", "|"
 };
+
+vector<string> digits;
