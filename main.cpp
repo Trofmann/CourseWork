@@ -3,6 +3,7 @@
 #include "classes/TokensMutableGroup.h"
 #include "consts/consts.h"
 #include "utils/utils.h"
+#include "groups/groups.h"
 #include "tests/tests.h"
 
 using namespace std;

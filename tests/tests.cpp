@@ -1,6 +1,7 @@
 #include "../classes/TokensImmutableGroup.h"
 #include "../classes/TokensMutableGroup.h"
 #include "../consts/consts.h"
+#include "../groups/groups.h"
 #include "tests.h"
 
 void test() {
@@ -13,9 +14,8 @@ void testTokensImmutableGroup() {
     // Тестирование неизменяемой группы токенов
     // Ожидается: kw_0 kw_1
     // Проверено
-    TokensImmutableGroup kws(keyWordsGroupPrefix, keyWords);
-    cout << kws.getValueToken("alignas") << ' ';
-    cout << kws.getValueToken("alignof");
+    cout << keyWordsGroup .getValueToken("alignas") << ' ';
+    cout << keyWordsGroup .getValueToken("alignof");
     cout << endl;
 }
 
