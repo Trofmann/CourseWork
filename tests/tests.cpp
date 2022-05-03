@@ -2,9 +2,12 @@
 #include "../classes/TokensMutableGroup.h"
 #include "../consts/consts.h"
 #include "../groups/groups.h"
+#include "../utils/utils.h"
 #include "tests.h"
 
 void test() {
+    // Тестировать лучше всё сразу, чтоб быть уверенным, что ничего не сломалось
+    // Группы
     testKeyWordsGroup();
     testSpacersGroup();
     testArithmeticSignsGroup();
@@ -14,7 +17,15 @@ void test() {
     testDigitConstsGroup();
     testUserTypesGroup();
 
+    // Прочие утилиты
     testDigitsPreparation();
+
+    // Функции проверки вхождения в группу токенов или логическую группу
+    testIsSpacer();
+    testIsSign();
+    testIsDigit();
+    testIsUnaryQuote();
+    testIsDoubleQuote();
 }
 
 void testKeyWordsGroup() {
@@ -91,5 +102,53 @@ void testDigitsPreparation() {
     // Ожидается: 0 5 9 .
     // Проверено
     cout << digits[0] << ' ' << digits[5] << ' ' << digits[9] << ' ' << digits[10];
+    cout << endl;
+}
+
+void testIsSpacer() {
+    // Тестирование функции, определяющей, является ли символ разделителем
+    // Ожидается: 1 0 1
+    // Проверено
+    cout << isSpacer("\n") << ' ';
+    cout << isSpacer("f") << ' ';
+    cout << isSpacer(" ") << ' ';
+    cout << endl;
+}
+
+void testIsSign() {
+    // Тестирование функции, определяющей, является ли символ арифметическим знаком
+    // Ожидается: 1 0 1
+    // Проверено
+    cout << isSign("+") << ' ';
+    cout << isSign("f") << ' ';
+    cout << isSign("-") << ' ';
+    cout << endl;
+}
+
+void testIsDigit() {
+    // Тестирование функции, определяющей, является ли символ знаком, который может использоваться в числовых константах
+    // Ожидается: 1 1 0]
+    // Проверено
+    cout << isDigit("5") << ' ';
+    cout << isDigit(".") << ' ';
+    cout << isDigit("f") << ' ';
+    cout << endl;
+}
+
+void testIsUnaryQuote() {
+    // Тестирование функции, определяющей, является ли символ одинарной кавычкой
+    // Ожидается: 1 0
+    // Проверено
+    cout << isUnaryQuote("\'") << ' ';
+    cout << isUnaryQuote("\"") << ' ';
+    cout << endl;
+}
+
+void testIsDoubleQuote() {
+    // Тестирование функции, определяющей, является ли символ одинарной кавычкой
+    // Ожидается: 0 1
+    // Проверено
+    cout << isDoubleQuote("\'") << ' ';
+    cout << isDoubleQuote("\"") << ' ';
     cout << endl;
 }

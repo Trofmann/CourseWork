@@ -3,16 +3,13 @@
 #include "classes/TokensImmutableGroup.h"
 #include "classes/TokensMutableGroup.h"
 #include "consts/consts.h"
-#include "utils/utils.h"
 #include "groups/groups.h"
+#include "utils/utils.h"
 #include "tests/tests.h"
 
 using namespace std;
 
-int main() {
-    system("chcp 65001");
-    prepare();
-    // test();
+void parseFile() {
     // Спарсенные данные из входного файла
     vector <string> parsedData;
     // Входной файл
@@ -21,5 +18,11 @@ int main() {
     while (fileIn.get(ch)) {
         cout << 1;
     }
+}
+
+int main() {
+    system("chcp 65001");
+    prepare();
+    test();
     return 0;
 }
