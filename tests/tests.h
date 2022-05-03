@@ -4,11 +4,26 @@
 // "Тестирование" кода
 extern void test();
 
-// Тестирование неизменяемой группы токенов
-extern void testTokensImmutableGroup();
+// Тестирование неизменяемой группы токенов + тестирование группы токенов ключевых слов
+extern void testKeyWordsGroup();
 
-// Тестирование изменяемой группы токенов
-extern void testTokensMutableGroup();
+// Разделители
+extern void testSpacersGroup();
+
+// Арифметические знаки
+extern void testArithmeticSignsGroup();
+
+// Переменные
+extern void testVariablesGroup();
+
+// Числовые константы
+extern void testDigitConstsGroup();
+
+// Строковые константы
+extern void testStringConstsGroup();
+
+// Пользовательские типы данных
+extern void testUserTypesGroup();
 
 // Тестирование заполнения знаков для числовых констант
 extern void testDigitsPreparation();
