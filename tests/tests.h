@@ -2,6 +2,7 @@
 #define COURSEWORK_TESTS_H
 
 // "Тестирование" кода
+extern void test();
 
 // Тестирование неизменяемой группы токенов
 extern void testTokensImmutableGroup();

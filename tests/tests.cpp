@@ -3,6 +3,12 @@
 #include "../consts/consts.h"
 #include "tests.h"
 
+void test() {
+    testTokensImmutableGroup();
+    testTokensMutableGroup();
+    testDigitsPreparation();
+}
+
 void testTokensImmutableGroup() {
     // Тестирование неизменяемой группы токенов
     // Ожидается: kw_0 kw_1

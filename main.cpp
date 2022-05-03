@@ -14,8 +14,6 @@ using namespace std;
 int main() {
     system("chcp 65001");
     prepare();
-    testTokensMutableGroup();
-    testTokensImmutableGroup();
-    testDigitsPreparation();
+    test();
     return 0;
 }
