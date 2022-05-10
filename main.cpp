@@ -9,9 +9,10 @@
 
 using namespace std;
 
+// Спарсенные данные из входного файла. Храним глобально, чтобы легко добираться до данных
+vector<string> parsedData;
+
 void parseFile() {
-    // Спарсенные данные из входного файла
-    vector<string> parsedData;
     // Входной файл
     ifstream fileIn("test_example.cpp");
     char ch;
@@ -37,6 +38,7 @@ void parseFile() {
             parsedData.push_back(chStr);
         } else {
             if (hasUnclosedDoubleQuote || hasUnclosedUnaryQuote) {
+                // Если есть незакрытые кавычки, на остальные символы внимания не обращаем
                 word += chStr;
             } else {
                 if (isSpacer(chStr) || isSign(chStr) || isSpaceSymbol(chStr)) {
@@ -66,8 +68,10 @@ void parseFile() {
 
 int main() {
     system("chcp 65001");
+    int a;
     prepare();
 //    test();
     parseFile();
+//    cin >> a;
     return 0;
 }
