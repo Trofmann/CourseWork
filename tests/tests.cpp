@@ -39,9 +39,8 @@ void testKeyWordsGroup() {
 
 void testSpacersGroup() {
     // Тестирование группы токенов для разделителей
-    // Ожидается: sp_0 sp_1 sp_8 sp_2
+    // Ожидается: sp_0 sp_7 sp_1
     // Проверено
-    cout << spacersGroup.getValueToken(" ") << ' ';
     cout << spacersGroup.getValueToken("\n") << ' ';
     cout << spacersGroup.getValueToken("\"") << ' ';
     cout << spacersGroup.getValueToken("(") << ' ';
