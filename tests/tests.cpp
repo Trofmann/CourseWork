@@ -39,9 +39,9 @@ void testKeyWordsGroup() {
 
 void testSpacersGroup() {
     // Тестирование группы токенов для разделителей
-    // Ожидается: sp_0 sp_7 sp_1
+    // Ожидается: sp_1 sp_7 sp_0
     // Проверено
-    cout << spacersGroup.getValueToken("\n") << ' ';
+    cout << spacersGroup.getValueToken(")") << ' ';
     cout << spacersGroup.getValueToken("\"") << ' ';
     cout << spacersGroup.getValueToken("(") << ' ';
     cout << endl;
@@ -108,7 +108,7 @@ void testIsSpacer() {
     // Тестирование функции, определяющей, является ли символ разделителем
     // Ожидается: 1 0 0
     // Проверено
-    cout << isSpacer("\n") << ' ';
+    cout << isSpacer("(") << ' ';
     cout << isSpacer("f") << ' ';
     cout << isSpacer(" ") << ' ';
     cout << endl;
