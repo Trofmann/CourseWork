@@ -14,7 +14,7 @@ const vector<string> keyWords = {
         "nullptr", "operator", "or", "or_eq", "private", "protected", "public", "register", "reinterpret_cast",
         "requires", "return", "short", "signed", "sizeof", "static", "static_assert", "static_cast", "struct", "switch",
         "template", "this", "thread_local", "throw", "true", "try", "typedef", "typeid", "typename", "union",
-        "unsigned", "using", "virtual", "void", "volatile", "volatile", "while", "xor", "xor_eq",
+        "unsigned", "using", "virtual", "void", "volatile", "volatile", "while", "xor", "xor_eq", "include",
 };
 
 // Список разделителей

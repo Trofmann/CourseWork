@@ -26,6 +26,7 @@ void test() {
     testIsDigit();
     testIsUnaryQuote();
     testIsDoubleQuote();
+    testIsKeyWord();
 }
 
 void testKeyWordsGroup() {
@@ -149,5 +150,14 @@ void testIsDoubleQuote() {
     // Проверено
     cout << isDoubleQuote("\'") << ' ';
     cout << isDoubleQuote("\"") << ' ';
+    cout << endl;
+}
+
+void testIsKeyWord() {
+    // Тестирование функции, определяющей, является ли слово ключевым словом языка С++
+    // Ожидается: 1 0 1
+    cout << isKeyWord("class") << ' ';
+    cout << isKeyWord("abc") << ' ';
+    cout << isKeyWord("throw") << ' ';
     cout << endl;
 }

@@ -43,4 +43,7 @@ extern void testIsUnaryQuote();
 // Тестирование функции, определяющей, является ли символ двойной кавычкой
 extern void testIsDoubleQuote();
 
+// Тестирование функции, определяющей, является ли слово ключевым словом языка С++
+extern void testIsKeyWord();
+
 #endif //COURSEWORK_TESTS_H

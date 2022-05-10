@@ -20,6 +20,12 @@ extern bool isSpacer(string);
 // Является ли символ арифметическим знаком
 extern bool isSign(string);
 
+// Является ли слово ключевым словом языка С++
+extern bool isKeyWord(string);
+
+// Является ли слово пользовательским типом данных
+extern bool isUserType(string);
+
 // Является ли символ знаком, который может использоваться в числовых константах
 extern bool isDigit(string);
 
@@ -28,6 +34,9 @@ extern bool isUnaryQuote(string);
 
 // Является ли символ двойной кавычкой
 extern bool isDoubleQuote(string);
+
+// Является ли символ кавычкой
+extern bool isQuote(string);
 
 // Является ли символ пробельным
 extern bool isSpaceSymbol(string);
