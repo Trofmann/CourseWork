@@ -15,24 +15,43 @@ void parseFile() {
     // Входной файл
     ifstream fileIn("test_example.cpp");
     char ch;
-    int hasUnclosedDoubleQuote = 0, hasUnclosedUnaryQuote;
+    bool hasUnclosedDoubleQuote = false, hasUnclosedUnaryQuote = false;
     string word;
     while (fileIn.get(ch)) {
         string chStr(1, ch);
-        if (hasUnclosedDoubleQuote) {
-        } else {
-            if (isSpacer(chStr) || isSign(chStr) || isSpaceSymbol(chStr)) {
-                // Если видим разделитель, то сбрасываем текущее слово в контейнер спарсенных данных
-                if (!word.empty()) {
+        if (isDoubleQuote(chStr) || isUnaryQuote(chStr)) {
+            // Сбрасываем слово только если есть незакрытая кавычка
+            if (isDoubleQuote(chStr)) {
+                if (hasUnclosedDoubleQuote) {
                     parsedData.push_back(word);
                     word = "";
                 }
-                // Пробелы не рассматриваем
-                if (!isSpaceSymbol(chStr)) {
-                    parsedData.push_back(chStr);
-                }
+                hasUnclosedDoubleQuote = !hasUnclosedDoubleQuote;
             } else {
-                word.push_back(ch);
+                if (hasUnclosedUnaryQuote) {
+                    parsedData.push_back(word);
+                    word = "";
+                }
+                hasUnclosedUnaryQuote = !hasUnclosedUnaryQuote;
+            }
+            parsedData.push_back(chStr);
+        } else {
+            if (hasUnclosedDoubleQuote || hasUnclosedUnaryQuote) {
+                word += chStr;
+            } else {
+                if (isSpacer(chStr) || isSign(chStr) || isSpaceSymbol(chStr)) {
+                    // Если видим разделитель, то сбрасываем текущее слово в контейнер спарсенных данных
+                    if (!word.empty()) {
+                        parsedData.push_back(word);
+                        word = "";
+                    }
+                    // Пробелы не рассматриваем
+                    if (!isSpaceSymbol(chStr)) {
+                        parsedData.push_back(chStr);
+                    }
+                } else {
+                    word.push_back(ch);
+                }
             }
         }
     }
