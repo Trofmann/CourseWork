@@ -11,18 +11,44 @@ using namespace std;
 
 void parseFile() {
     // Спарсенные данные из входного файла
-    vector <string> parsedData;
+    vector<string> parsedData;
     // Входной файл
-    ifstream fileIn("easy_example.cpp");
+    ifstream fileIn("test_example.cpp");
     char ch;
+    int hasUnclosedDoubleQuote = 0, hasUnclosedUnaryQuote;
+    string word;
     while (fileIn.get(ch)) {
-        cout << 1;
+        string chStr(1, ch);
+        if (hasUnclosedDoubleQuote) {
+        } else {
+            if (isSpacer(chStr) || isSign(chStr) || isSpaceSymbol(chStr)) {
+                // Если видим разделитель, то сбрасываем текущее слово в контейнер спарсенных данных
+                if (!word.empty()) {
+                    parsedData.push_back(word);
+                    word = "";
+                }
+                // Пробелы не рассматриваем
+                if (!isSpaceSymbol(chStr)) {
+                    parsedData.push_back(chStr);
+                }
+            } else {
+                word.push_back(ch);
+            }
+        }
+    }
+    if (!word.empty()) {
+        // Закидываем последнее слово
+        parsedData.push_back(word);
+    }
+    for (int i = 0; i < parsedData.size(); i++) {
+        cout << parsedData[i] << endl;
     }
 }
 
 int main() {
     system("chcp 65001");
     prepare();
-    test();
+//    test();
+    parseFile();
     return 0;
 }

@@ -46,3 +46,8 @@ bool isUnaryQuote(string value) {
 bool isDoubleQuote(string value) {
     return value == "\"";
 }
+
+// Является ли символ пробельным
+bool isSpaceSymbol(string value) {
+    return (value == " ") || (value == "\n") || (value == "\t");
+}

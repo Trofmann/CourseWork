@@ -29,4 +29,7 @@ extern bool isUnaryQuote(string);
 // Является ли символ двойной кавычкой
 extern bool isDoubleQuote(string);
 
+// Является ли символ пробельным
+extern bool isSpaceSymbol(string);
+
 #endif //COURSEWORK_UTILS_H
