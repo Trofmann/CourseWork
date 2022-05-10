@@ -107,7 +107,7 @@ void testDigitsPreparation() {
 
 void testIsSpacer() {
     // Тестирование функции, определяющей, является ли символ разделителем
-    // Ожидается: 1 0 1
+    // Ожидается: 1 0 0
     // Проверено
     cout << isSpacer("\n") << ' ';
     cout << isSpacer("f") << ' ';
