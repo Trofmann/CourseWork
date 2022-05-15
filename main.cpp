@@ -65,10 +65,6 @@ void parseFile() {
         // Закидываем последнее слово
         parsedData.push_back(word);
     }
-    for (string word: parsedData) {
-        cout << word << endl;
-    }
-    cout << endl;
 }
 
 void codeData() {
@@ -114,18 +110,23 @@ void codeData() {
             isPreviousClass = (word == "class");
         }
     }
+}
+
+void outCodedData() {
+    // Вывод закодированных данных
+    ofstream fileOut;
+    fileOut.open("result.txt");
     for (string word: codedData) {
-        cout << word << endl;
+        fileOut << word;
     }
+    fileOut.close();
 }
 
 int main() {
     system("chcp 65001");
-    int a;
     prepare();
-//    test();
     parseFile();
     codeData();
-    cin >> a;
+    outCodedData();
     return 0;
 }
