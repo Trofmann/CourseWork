@@ -10,12 +10,12 @@
 using namespace std;
 
 // Спарсенные данные из входного файла. Храним глобально, чтобы легко добираться до данных
-vector<string> parsedData;
+vector<string> scanedData;
 
 // Закодированные данные
 vector<string> codedData;
 
-void parseFile() {
+void scanFile() {
     // Парсинг входного файла
     // Входной файл
     ifstream fileIn("test_example.cpp");
@@ -28,18 +28,18 @@ void parseFile() {
             // Сбрасываем слово только если есть незакрытая кавычка
             if (isDoubleQuote(chStr)) {
                 if (hasUnclosedDoubleQuote) {
-                    parsedData.push_back(word);
+                    scanedData.push_back(word);
                     word = "";
                 }
                 hasUnclosedDoubleQuote = !hasUnclosedDoubleQuote;
             } else {
                 if (hasUnclosedUnaryQuote) {
-                    parsedData.push_back(word);
+                    scanedData.push_back(word);
                     word = "";
                 }
                 hasUnclosedUnaryQuote = !hasUnclosedUnaryQuote;
             }
-            parsedData.push_back(chStr);
+            scanedData.push_back(chStr);
         } else {
             if (hasUnclosedDoubleQuote || hasUnclosedUnaryQuote) {
                 // Если есть незакрытые кавычки, на остальные символы внимания не обращаем
@@ -48,12 +48,12 @@ void parseFile() {
                 if (isSpacer(chStr) || isSign(chStr) || isSpaceSymbol(chStr)) {
                     // Если видим разделитель, то сбрасываем текущее слово в контейнер спарсенных данных
                     if (!word.empty()) {
-                        parsedData.push_back(word);
+                        scanedData.push_back(word);
                         word = "";
                     }
                     // Пробелы не рассматриваем
                     if (!isSpaceSymbol(chStr)) {
-                        parsedData.push_back(chStr);
+                        scanedData.push_back(chStr);
                     }
                 } else {
                     word.push_back(ch);
@@ -63,7 +63,7 @@ void parseFile() {
     }
     if (!word.empty()) {
         // Закидываем последнее слово
-        parsedData.push_back(word);
+        scanedData.push_back(word);
     }
 }
 
@@ -73,7 +73,7 @@ void codeData() {
     bool isPreviousClass = false;
     // Флаги кавычки
     bool hasUnclosedQuote = false;
-    for (string word: parsedData) {
+    for (string word: scanedData) {
         if (hasUnclosedQuote) {
             if (isQuote(word)) {
                 codedData.push_back(spacersGroup.getValueToken(word));
@@ -125,7 +125,7 @@ void outCodedData() {
 int main() {
     system("chcp 65001");
     prepare();
-    parseFile();
+    scanFile();
     codeData();
     outCodedData();
     return 0;
